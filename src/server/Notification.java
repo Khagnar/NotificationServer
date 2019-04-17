@@ -3,39 +3,57 @@ package server;
 import java.util.Date;
 
 public class Notification {
-    private String external_id;
+    private String subject;
     private String message;
-    private Date time;
-    private String notification_type;
-    private String extra_params;
+    private String email;
+    private Date date;
 
-    public Notification (String external_id, String message, Date time, String notification_type, String extra_params) {
-        this.external_id = external_id;
+    public Notification(String subject, String message, String email, Date date) {
+        this.subject = subject;
         this.message = message;
-        this.time = time;
-        this.notification_type = notification_type;
-        this.extra_params = extra_params;
+        this.email = email;
+        this.date = date;
     }
 
-    public Date getTime() {
-        return time;
+    public String getSubject() {
+        return subject;
     }
 
-    public String getNotification_type() {
-        return notification_type;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
-    public String getExtra_params() {
-        return extra_params;
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getMessage() {
         return message;
     }
 
-    public String toString() {
-        return ("ID: " + external_id + "\nMessage: " + message + "\nTime: " + time + "\nNotification_type: "
-                + notification_type + "\nExtraParams: " + extra_params + "\n");
+    public String getEmail() {
+        return email;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Notification{" +
+                "subject='" + subject + '\'' +
+                ", message='" + message + '\'' +
+                ", email='" + email + '\'' +
+                ", date=" + date +
+                '}';
+    }
 }
